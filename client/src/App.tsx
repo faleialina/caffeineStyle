@@ -1,7 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import coffee from './assets/CoffeeGrains.png'
+import avatar from './assets/avatar.png'
 import badge from './assets/badge.png'
 import best_price from './assets/bestprice.png'
+import caffeBkg from './assets/caffeBkg.png'
 import img from './assets/coffeeImage.png'
 import coffeeMenu1 from './assets/coffeeMenu1.svg'
 import coffeeMenu2 from './assets/coffeeMenu2.svg'
@@ -9,6 +11,10 @@ import coffeeMenu3 from './assets/coffeeMenu3.svg'
 import coffeeMenu4 from './assets/coffeeMenu4.svg'
 import coffee_beans from './assets/coffeebeans.png'
 import coffee_cup from './assets/coffeecup.png'
+import cup from './assets/cup.png'
+import leftArrow from './assets/leftArrow.png'
+import quotes from './assets/quotes.png'
+import rightArrow from './assets/rightArrow.png'
 import Header from './components/Header'
 
 const coffies = [
@@ -290,6 +296,111 @@ const Advantages = styled.div`
 		color: #603809;
 	}
 `
+const SectionMorning = styled.div`
+	background-image: url(${caffeBkg});
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	.wrapperMorning {
+		display: flex;
+		justify-content: center;
+		gap: 225px;
+		.wrapperLeft {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			max-width: 575px;
+			gap: 22px;
+			h1 {
+				font: 700 54px 'Playfair Display';
+				color: #ffffff;
+			}
+			p {
+				font: 400 20px 'Playfair Display';
+				color: #ffffff;
+			}
+		}
+		.wrapperRight {
+			background-image: url(${cup});
+			width: 300px;
+			height: 467px;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+`
+const Feedback = styled.div`
+	padding: 82px 152px;
+	margin: auto;
+	max-width: 1366px;
+
+	h2 {
+		font: 700 54px 'Playfair Display';
+		color: #603809;
+		margin-bottom: 16px;
+		text-align: center;
+	}
+	p {
+		font: 400 20px 'Playfair Display';
+		color: #707070;
+		text-align: center;
+	}
+	.leftArrow,
+	.rightArrow {
+		width: 82px;
+		padding: 29px;
+		border-radius: 16px;
+		background: #f9c06a;
+		position: absolute;
+		top: 220px;
+	}
+
+	.rightArrow {
+		right: -50px;
+	}
+	.leftArrow {
+		left: -50px;
+	}
+
+	.slider {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		gap: 225px;
+		border: 1px solid #f9c06a6b;
+		background: #fff9f1;
+		margin-top: 45px;
+		.quotes {
+			position: absolute;
+			top: 50px;
+			left: 30px;
+		}
+		.text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 129px 100px 101px;
+			gap: 30px;
+			p {
+				font: 600 18px 'Playfair Display';
+				color: #707070;
+				line-height: 36px;
+			}
+			h3 {
+				font: 700 32px 'Playfair Display';
+				color: #603809;
+				text-align: center;
+			}
+		}
+		.avatar {
+			position: absolute;
+			bottom: -100px;
+		}
+	}
+`
 
 const App = () => {
 	return (
@@ -362,6 +473,46 @@ const App = () => {
 				<p className='important'>Get started today.</p>
 				<Button>Join Us</Button>
 			</Advantages>
+			<SectionMorning>
+				<div className='wrapperMorning'>
+					<div className='wrapperLeft'>
+						<h1>Get a chance to have an Amazing morning</h1>
+						<p className='textPreview'>
+							We are giving you are one time opportunity to experience a better
+							life with coffee.
+						</p>
+						<Button>Order Now</Button>
+					</div>
+					<div className='wrapperRight'></div>
+				</div>
+			</SectionMorning>
+			<Feedback>
+				<h2>Our coffee perfection feedback</h2>
+				<p>Our customers has amazing things to say about us</p>
+				<div className='slider'>
+					<img className='quotes' src={quotes} alt='' />
+					<div className='leftArrow'>
+						<img src={leftArrow} alt='' />
+					</div>
+					<div className='text'>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting
+							industry. Lorem Ipsum has been the industry's standard dummy text
+							ever since the 1500s, when an unknown printer took a galley of
+							type and scrambled it to make a type specimen book. It has
+							survived not only five centuries, but also the leap into
+							electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset.....
+						</p>
+						<h3>Jonny Thomas</h3>
+						<p>Project Manager</p>
+						<img className='avatar' src={avatar} alt='' />
+					</div>
+					<div className='rightArrow'>
+						<img src={rightArrow} alt='' />
+					</div>
+				</div>
+			</Feedback>
 		</>
 	)
 }
