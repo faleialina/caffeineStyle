@@ -15,6 +15,7 @@ import cup from './assets/cup.png'
 import leftArrow from './assets/leftArrow.png'
 import quotes from './assets/quotes.png'
 import rightArrow from './assets/rightArrow.png'
+import Footer from './components/Footer'
 import Header from './components/Header'
 
 const coffies = [
@@ -463,7 +464,7 @@ const App = () => {
 				<div className='advantages_content'>
 					{advantages.map(el => (
 						<div className='advantages_card' key={el.id}>
-							<img src={el.icon} alt='' />
+							<img src={el.icon} alt='icon' />
 							<h3>{el.title}</h3>
 							<p>{el.description}</p>
 						</div>
@@ -490,9 +491,9 @@ const App = () => {
 				<h2>Our coffee perfection feedback</h2>
 				<p>Our customers has amazing things to say about us</p>
 				<div className='slider'>
-					<img className='quotes' src={quotes} alt='' />
+					<img className='quotes' src={quotes} alt='quotes' />
 					<div className='leftArrow'>
-						<img src={leftArrow} alt='' />
+						<img src={leftArrow} alt='arrow' />
 					</div>
 					<div className='text'>
 						<p>
@@ -506,13 +507,14 @@ const App = () => {
 						</p>
 						<h3>Jonny Thomas</h3>
 						<p>Project Manager</p>
-						<img className='avatar' src={avatar} alt='' />
+						<img className='avatar' src={avatar} alt='avatar' />
 					</div>
 					<div className='rightArrow'>
-						<img src={rightArrow} alt='' />
+						<img src={rightArrow} alt='arrow' />
 					</div>
 				</div>
 			</Feedback>
+			<Footer />
 		</>
 	)
 }
