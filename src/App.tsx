@@ -421,7 +421,6 @@ const Feedback = styled.div`
     background: #fff9f1;
     margin-top: 45px;
     height: 524px;
-    max-width: 80%;
     .quotes {
       position: absolute;
       top: 50px;
@@ -454,12 +453,12 @@ const Feedback = styled.div`
 
 const App = () => {
   const [count, setCount] = useState(0);
-
   const nextSlide = () => {
-    count === slidesObj.length - 1 ? setCount(0) : setCount(count + 1);
+    setCount(count === slidesObj.length - 1 ? 0 : count + 1);
   };
+
   const lastSlide = () => {
-    count === 0 ? setCount(slidesObj.length - 1) : setCount(count - 1);
+    setCount(count === 0 ? slidesObj.length - 1 : count - 1);
   };
 
   useEffect(() => {
