@@ -7,6 +7,11 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 2% 0;
   margin: auto;
+  flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    padding: 2%;
+  }
 
   h1 {
     font-family: Clicker Script;
@@ -38,6 +43,11 @@ const Wrapper = styled.div`
   .navigation {
     display: flex;
     gap: 60px;
+
+    @media (max-width: 900px) {
+      gap: 30px;
+    }
+
     p {
       color: #ffffff;
     }

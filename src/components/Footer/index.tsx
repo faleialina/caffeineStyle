@@ -27,6 +27,7 @@ const BackgroundCoffeBeans = styled.div`
     align-items: center;
     gap: 66px;
     padding: 162px 2% 50px;
+    flex-wrap: wrap-reverse;
 
     .info_text {
       display: flex;
@@ -39,6 +40,10 @@ const BackgroundCoffeBeans = styled.div`
         font-size: 54px;
         font-weight: 400;
         color: #ffffff;
+
+        @media (max-width: 900px) {
+          font-size: 40px;
+        }
       }
 
       p {
@@ -47,6 +52,11 @@ const BackgroundCoffeBeans = styled.div`
         font-weight: 400;
         color: #ffffff;
         line-height: 22px;
+
+        @media (max-width: 900px) {
+          font-size: 12px;
+          line-height: 18px;
+        }
       }
 
       .images {
@@ -76,12 +86,20 @@ const BackgroundCoffeBeans = styled.div`
       justify-content: space-between;
       gap: 66px;
 
+      @media (max-width: 400px) {
+        gap: 33px;
+      }
+
       h2 {
         font-family: Playfair Display;
         font-size: 26px;
         font-weight: 700;
         color: #ffffff;
         margin: 0 0 55px;
+
+        @media (max-width: 900px) {
+          font-size: 20px;
+        }
       }
 
       p {
@@ -89,6 +107,10 @@ const BackgroundCoffeBeans = styled.div`
         font-size: 18px;
         font-weight: 400;
         color: #ffffff;
+
+        @media (max-width: 900px) {
+          font-size: 14px;
+        }
       }
 
       .info_contact,
@@ -103,6 +125,10 @@ const BackgroundCoffeBeans = styled.div`
       .info_contact {
         h2 {
           margin-bottom: 31px;
+
+          @media (max-width: 900px) {
+            margin-bottom: 0;
+          }
         }
       }
     }

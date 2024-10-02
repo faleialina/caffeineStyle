@@ -141,8 +141,13 @@ const BackgroundPreview = styled.div`
     flex-direction: column;
     gap: 20px;
     margin: 0 auto;
-    padding: 5%;
+    padding: 5% 0;
     max-width: 1220px;
+
+    @media (max-width: 900px) {
+      padding: 5%;
+    }
+
     p {
       font-family: Playfair Display;
       font-size: 22px;
@@ -157,6 +162,10 @@ const BackgroundPreview = styled.div`
       font-size: 220px;
       font-weight: 400;
       color: #ffffff;
+
+      @media (max-width: 400px) {
+        font-size: 120px;
+      }
     }
   }
 `;
@@ -167,6 +176,15 @@ const CoffeeDiscovery = styled.div`
   max-width: 1180px;
   margin: auto;
   gap: 90px;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 900px) {
+    padding: 2%;
+    gap: 50px;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
@@ -185,37 +203,57 @@ const CoffeeDiscovery = styled.div`
       color: #707070;
     }
   }
+  @media (max-width: 900px) {
+    .img_coffee {
+      width: 50%;
+      height: 50%;
+    }
+  }
+  @media (max-width: 400px) {
+    .img_coffee {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 const Menu = styled.div`
-	max-width: 1220px;
-	margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 20px;
+	margin: 82px auto 0;
+  gap: 24px;
+
+  @media (max-width: 900px) {
+    padding: 2%;
+  }
 
 	h2 {
 		font-family: 'Playfair Display';
 		font-size: 54px;
 		font-weight: 700;
 		color: #603809;
+
+    @media (max-width: 900px) {
+      font-size: 48px;
+    }
 	}
 
 	p {
 		font-family: 'Playfair Display';
 		font-size: 20px;
 		font-weight: 400;
-		color: #603809;
+		color: #707070;
 	}
 
 	.content {
 		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		flex-direction: row;
-		gap: 30px;
-		flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    @media (max-width: 1200px) {
+      gap: 50px;
+    }
 
 		.item {
 			background-color: #fff9f1;
@@ -225,7 +263,7 @@ const Menu = styled.div`
 			transition: transform 0.3s ease;
 			&:hover {
 				transform: scale(1.1);
-				cursor: pointer
+				cursor: default
 			}
 
 		}
@@ -303,6 +341,7 @@ const Advantages = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 
     .advantages_card {
       border: 1px solid #f9c06a6b;
@@ -312,10 +351,11 @@ const Advantages = styled.div`
       background: #fff9f1;
       padding: 36px 43px;
       transition: transform 0.3s ease;
+
       &:hover {
         background-color: #ffeed8;
         transform: scale(1.1);
-        cursor: pointer;
+        cursor: default;
       }
 
       .coffee_beans,
@@ -352,8 +392,16 @@ const SectionMorning = styled.div`
   background-position: center;
   .wrapperMorning {
     display: flex;
-    justify-content: center;
-    gap: 225px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 5% 93px;
+    max-width: 1366px;
+    flex-wrap: wrap;
+
+    @media (max-width: 400px) {
+      padding: 5%;
+    }
+
     .wrapperLeft {
       display: flex;
       flex-direction: column;
@@ -363,6 +411,10 @@ const SectionMorning = styled.div`
       h1 {
         font: 700 54px 'Playfair Display';
         color: #ffffff;
+
+        @media (max-width: 900px) {
+          font-size: 40px;
+        }
       }
       p {
         font: 400 20px 'Playfair Display';
@@ -383,6 +435,10 @@ const Feedback = styled.div`
   padding: 82px 152px;
   margin: auto;
   max-width: 1366px;
+
+  @media (max-width: 1000px) {
+    padding: 82px 70px;
+  }
 
   h2 {
     font: 700 54px 'Playfair Display';
@@ -416,7 +472,6 @@ const Feedback = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
-    gap: 225px;
     border: 1px solid #f9c06a6b;
     background: #fff9f1;
     margin-top: 45px;
@@ -493,7 +548,7 @@ const App = () => {
           <button className="button">Order Now</button>
         </div>
         <div>
-          <img src={coffee} alt="coffee" />
+          <img className="img_coffee" src={coffee} alt="coffee" width={500} height={484} />
         </div>
       </CoffeeDiscovery>
       <Menu>
