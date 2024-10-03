@@ -515,7 +515,7 @@ const App = () => {
             cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you
             have ever tasted.
           </p>
-          <button className="button">Order Now</button>
+          <Button>Order Now</Button>
         </div>
         <div>
           <img className="img_coffee" src={coffee} alt="coffee" width={500} height={484} />
