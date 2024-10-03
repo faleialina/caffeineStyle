@@ -116,9 +116,7 @@ const Global = createGlobalStyle`
     box-sizing:border-box;
     font-style:normal;
     color:#707070;
-    font-family:'Playfair Display';
-    font-weight:400;
-    font-size: 20px;
+    font: 400 20px 'Playfair Display';
     }
 
   body {
@@ -149,22 +147,18 @@ const BackgroundPreview = styled.div`
     }
 
     p {
-      font-family: Playfair Display;
-      font-size: 22px;
-      font-weight: 500;
+      font: 500 22px 'Playfair Display';
       color: #ffffff;
       max-width: 527px;
     }
 
     h1 {
       max-width: 527px;
-      font-family: Clicker Script;
-      font-size: 220px;
-      font-weight: 400;
+      font: 400 220px 'Clicker Script';
       color: #ffffff;
 
       @media (max-width: 400px) {
-        font-size: 120px;
+        font: 400 120px 'Clicker Script';
       }
     }
   }
@@ -191,15 +185,11 @@ const CoffeeDiscovery = styled.div`
     gap: 29px;
 
     h2 {
-      font-family: Playfair Display;
-      font-size: 54px;
-      font-weight: 700;
+      font: 700 54px 'Playfair Display';
       color: #603809;
     }
     p {
-      font-family: Playfair Display;
-      font-size: 20px;
-      font-weight: 400;
+      font: 400 20px 'Playfair Display';
       color: #707070;
     }
   }
@@ -229,20 +219,16 @@ const Menu = styled.div`
   }
 
 	h2 {
-		font-family: 'Playfair Display';
-		font-size: 54px;
-		font-weight: 700;
+	  font: 700 54px 'Playfair Display';
 		color: #603809;
 
     @media (max-width: 900px) {
-      font-size: 48px;
+      font: 700 48px 'Playfair Display';
     }
 	}
 
 	p {
-		font-family: 'Playfair Display';
-		font-size: 20px;
-		font-weight: 400;
+    font: 400 20px 'Playfair Display';
 		color: #707070;
 	}
 
@@ -277,23 +263,17 @@ const Menu = styled.div`
 				
 
 				h3 {
-					font-family: 'Playfair Display';
-					font-size: 22px;
-					font-weight: 600;
+          font: 600 22px 'Playfair Display';
 					color: #603809;
 				}
 
 				p {
-					font-family: 'Playfair Display';
-					font-size: 16px;
-					font-weight: 400;
+          font: 400 16px 'Playfair Display';
 					color: #1e1e1e;
 				}
 
 				.price {
-					font-family: 'Playfair Display';
-					font-size: 18px;
-					font-weight: 700;
+          font: 700 18px 'Playfair Display';
 					color: #603809;
 				}
 			}
@@ -309,9 +289,7 @@ const Button = styled.button`
   border-radius: 24px;
   color: #1e1e1e;
   max-width: 155px;
-  font-family: 'Playfair Display';
-  font-size: 16px;
-  font-weight: 700;
+  font: 700 16px 'Playfair Display';
   cursor: pointer;
 `;
 
@@ -324,16 +302,12 @@ const Advantages = styled.div`
   gap: 20px;
 
   h2 {
-    font-family: Playfair Display;
-    font-size: 54px;
-    font-weight: 700;
+    font: 700 54px 'Playfair Display';
     color: #603809;
   }
 
   p {
-    font-family: Playfair Display;
-    font-size: 20px;
-    font-weight: 400;
+    font: 400 20px 'Playfair Display';
     color: #707070;
   }
 
@@ -369,18 +343,14 @@ const Advantages = styled.div`
       }
 
       h3 {
-        font-family: Playfair Display;
-        font-size: 22px;
-        font-weight: 700;
+        font: 700 22px 'Playfair Display';
         color: #603809;
         margin: 25px auto 8px;
       }
     }
   }
   .important {
-    font-family: Playfair Display;
-    font-size: 20px;
-    font-weight: 700;
+    font: 700 20px 'Playfair Display';
     color: #603809;
   }
 `;
