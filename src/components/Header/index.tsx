@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -14,10 +15,12 @@ const Wrapper = styled.div`
   }
 
   h1 {
-    font-family: Clicker Script;
-    font-size: 35px;
-    font-weight: 400;
+    font: 400 35px 'Clicker Script';
     color: #ffffff;
+
+    @media (max-width: 900px) {
+      font: 300 28px 'Clicker Script';
+    }
   }
 
   button:first-child {
@@ -36,10 +39,12 @@ const Wrapper = styled.div`
     border-radius: 24px;
     color: #1e1e1e;
   }
+
   .container {
     display: flex;
     gap: 35px;
   }
+
   .navigation {
     display: flex;
     gap: 60px;
@@ -52,30 +57,89 @@ const Wrapper = styled.div`
       color: #ffffff;
     }
   }
+
   ul {
     display: flex;
     gap: 60px;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 700px) {
+      display: flex;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      gap: 20px;
+    }
+
+    @media (max-width: 700px) {
+      display: ${props => (props.isOpen ? 'flex' : 'none')};
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      background-color: #333;
+      width: 100%;
+      left: 0;
+      padding: 20px 0;
+    }
   }
 `;
 
 const Header = () => {
-  const nav: string[] = ['Home', 'Menu', 'About Us', 'Contact Us'];
+  const nav = ['Home', 'Menu', 'About Us', 'Contact Us'];
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <>
-      <Wrapper>
-        <h1>Caffeine</h1>
-        <div className="navigation">
+    <Wrapper isOpen={isOpen}>
+      <h1>Caffeine</h1>
+      <div className="burger" onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </div>
+      <div className="navigation">
+        <ul className={`menu ${isOpen ? 'active' : ''}`}>
           {nav.map(el => (
-            <p key={el}>{el}</p>
+            <li key={el}>
+              <p>{el}</p>
+            </li>
           ))}
-        </div>
-        <div className="container">
-          <button>Sign In</button>
-          <button className="btn_active">Sign Up</button>
-        </div>
-      </Wrapper>
-    </>
+          <li>
+            <button>Sign In</button>
+          </li>
+          <li>
+            <button className="btn_active">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </Wrapper>
   );
 };
+
 export default Header;
