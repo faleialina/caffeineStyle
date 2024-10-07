@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  isOpen: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   max-width: 1220px;
   display: flex;
   justify-content: space-between;

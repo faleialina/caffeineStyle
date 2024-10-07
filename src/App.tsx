@@ -157,8 +157,11 @@ const BackgroundPreview = styled.div`
       font: 400 220px 'Clicker Script';
       color: #ffffff;
 
+      @media (max-width: 900px) {
+        font: 400 180px 'Clicker Script';
+      }
       @media (max-width: 400px) {
-        font: 400 120px 'Clicker Script';
+        font: 300 120px 'Clicker Script';
       }
     }
   }
@@ -174,6 +177,7 @@ const CoffeeDiscovery = styled.div`
   @media (max-width: 600px) {
     flex-wrap: wrap;
   }
+
   @media (max-width: 900px) {
     padding: 2%;
     gap: 50px;
@@ -184,19 +188,35 @@ const CoffeeDiscovery = styled.div`
     flex-direction: column;
     gap: 29px;
 
+    @media (max-width: 600px) {
+      text-align: center;
+      align-items: center;
+    }
+
     h2 {
-      font: 700 54px 'Playfair Display';
+      font: 700 54px Playfair Display;
       color: #603809;
     }
+
     p {
-      font: 400 20px 'Playfair Display';
+      font: 400 20px Playfair Display;
       color: #707070;
     }
+
+    .button {
+      background: #f9c06a;
+      padding: 14px 27px;
+      border-radius: 24px;
+      color: #1e1e1e;
+      max-width: 134px;
+      cursor: pointer;
+    }
   }
+
   @media (max-width: 900px) {
     .img_coffee {
-      width: 50%;
-      height: 50%;
+      width: 90%;
+      height: 90%;
     }
   }
   @media (max-width: 400px) {
@@ -206,6 +226,7 @@ const CoffeeDiscovery = styled.div`
     }
   }
 `;
+
 const Menu = styled.div`
 	display: flex;
 	justify-content: center;
@@ -222,8 +243,9 @@ const Menu = styled.div`
 	  font: 700 54px 'Playfair Display';
 		color: #603809;
 
-    @media (max-width: 900px) {
-      font: 700 48px 'Playfair Display';
+    @media (max-width: 600px) {
+      text-align: center;
+      font: 700 36px 'Playfair Display';
     }
 	}
 
@@ -304,6 +326,11 @@ const Advantages = styled.div`
   h2 {
     font: 700 54px 'Playfair Display';
     color: #603809;
+
+    @media (max-width: 600px) {
+      text-align: center;
+      font: 700 36px 'Playfair Display';
+    }
   }
 
   p {
@@ -410,6 +437,10 @@ const Feedback = styled.div`
     padding: 82px 70px;
   }
 
+  @media (max-width: 500px) {
+    padding: 30px;
+  }
+
   h2 {
     font: 700 54px 'Playfair Display';
     color: #603809;
@@ -429,13 +460,26 @@ const Feedback = styled.div`
     background: #f9c06a;
     position: absolute;
     top: 220px;
+
+    @media (max-width: 500px) {
+      padding: 20px;
+      width: 70px;
+    }
   }
 
   .rightArrow {
     right: -50px;
+
+    @media (max-width: 500px) {
+      right: -30px;
+    }
   }
   .leftArrow {
     left: -50px;
+
+    @media (max-width: 500px) {
+      left: -30px;
+    }
   }
 
   .slider {
@@ -446,10 +490,18 @@ const Feedback = styled.div`
     background: #fff9f1;
     margin-top: 45px;
     height: 524px;
+
     .quotes {
       position: absolute;
       top: 50px;
       left: 30px;
+
+      @media (max-width: 900px) {
+        width: 10%;
+        height: 10%;
+        top: 0px;
+        left: 10px;
+      }
     }
     .text {
       display: flex;
@@ -458,15 +510,27 @@ const Feedback = styled.div`
       align-items: center;
       padding: 129px 100px 101px;
       gap: 30px;
+
+      @media (max-width: 900px) {
+        padding: 50px 30px 30px;
+      }
+
       p {
         font: 600 18px 'Playfair Display';
         color: #707070;
         line-height: 36px;
+
+        @media (max-width: 800px) {
+          font: 400 12px 'Playfair Display';
+        }
       }
       h3 {
         font: 700 32px 'Playfair Display';
         color: #603809;
         text-align: center;
+        @media (max-width: 800px) {
+          font: 400 16px 'Playfair Display';
+        }
       }
     }
     .avatar {
