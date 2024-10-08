@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import coffee from './assets/CoffeeGrains.png';
@@ -166,7 +167,7 @@ const BackgroundPreview = styled.div`
     }
   }
 `;
-const CoffeeDiscovery = styled.div`
+const CoffeeDiscovery = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -227,35 +228,35 @@ const CoffeeDiscovery = styled.div`
   }
 `;
 
-const Menu = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin: 82px auto 0;
+const Menu = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 82px auto 0;
   gap: 24px;
 
   @media (max-width: 900px) {
     padding: 2%;
   }
 
-	h2 {
-	  font: 700 54px 'Playfair Display';
-		color: #603809;
+  h2 {
+    font: 700 54px 'Playfair Display';
+    color: #603809;
 
     @media (max-width: 600px) {
       text-align: center;
       font: 700 36px 'Playfair Display';
     }
-	}
+  }
 
-	p {
+  p {
     font: 400 20px 'Playfair Display';
-		color: #707070;
-	}
+    color: #707070;
+  }
 
-	.content {
-		display: flex;
+  .content {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -263,47 +264,44 @@ const Menu = styled.div`
       gap: 50px;
     }
 
-		.item {
-			background-color: #fff9f1;
-			border: 1px solid #f9c06a;
-			max-width: 280px;
-			max-height: 364px;
-			transition: transform 0.3s ease;
-			&:hover {
-				transform: scale(1.1);
-				cursor: default
-			}
+    .item {
+      background-color: #fff9f1;
+      border: 1px solid #f9c06a;
+      max-width: 280px;
+      max-height: 364px;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+        cursor: default;
+      }
+    }
 
-		}
+    .itemInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 0 42px;
 
-			.itemInfo {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 8px;
-				padding: 14px 0 42px;
-				
+      h3 {
+        font: 600 22px 'Playfair Display';
+        color: #603809;
+      }
 
-				h3 {
-          font: 600 22px 'Playfair Display';
-					color: #603809;
-				}
+      p {
+        font: 400 16px 'Playfair Display';
+        color: #1e1e1e;
+      }
 
-				p {
-          font: 400 16px 'Playfair Display';
-					color: #1e1e1e;
-				}
-
-				.price {
-          font: 700 18px 'Playfair Display';
-					color: #603809;
-				}
-			}
-		}
-	}
+      .price {
+        font: 700 18px 'Playfair Display';
+        color: #603809;
+      }
+    }
+  }
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   display: block;
   border: none;
   background: #f9c06a;
@@ -315,7 +313,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Advantages = styled.div`
+const Advantages = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -428,7 +426,7 @@ const SectionMorning = styled.div`
     }
   }
 `;
-const Feedback = styled.div`
+const Feedback = styled(motion.div)`
   padding: 82px 152px;
   margin: auto;
   max-width: 1366px;
@@ -561,17 +559,25 @@ const App = () => {
       <Global />
       <BackgroundPreview>
         <Header />
-        <div className="landing">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 3 }}
+          viewport={{ once: true }}
+          className="landing"
+        >
           <p>We’ve got your morning covered with</p>
           <h1>Coffee</h1>
           <p>
             It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We provide the best for our
             customers.
           </p>
-          <button className="button">Order Now</button>
-        </div>
+          <Button whileHover={{ scale: 1.3 }} className="button">
+            Order Now
+          </Button>
+        </motion.div>
       </BackgroundPreview>
-      <CoffeeDiscovery>
+      <CoffeeDiscovery initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <div className="content">
           <h2>Discover the best coffee</h2>
           <p>
@@ -579,13 +585,13 @@ const App = () => {
             cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you
             have ever tasted.
           </p>
-          <Button>Order Now</Button>
+          <Button whileHover={{ scale: 1.3 }}>Order Now</Button>
         </div>
         <div>
           <img className="img_coffee" src={coffee} alt="coffee" width={500} height={484} />
         </div>
       </CoffeeDiscovery>
-      <Menu>
+      <Menu initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <h2>Enjoy a new blend of coffee style</h2>
         <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing.</p>
         <div className="content">
@@ -604,7 +610,7 @@ const App = () => {
           ))}
         </div>
       </Menu>
-      <Advantages>
+      <Advantages initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <h2>Why are we different?</h2>
         <p>We don’t just make your coffee, we make your day!</p>
         <div className="advantages_content">
@@ -621,16 +627,22 @@ const App = () => {
         <Button>Join Us</Button>
       </Advantages>
       <SectionMorning>
-        <div className="wrapperMorning">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 3 }}
+          viewport={{ once: true }}
+          className="wrapperMorning"
+        >
           <div className="wrapperLeft">
             <h1>Get a chance to have an Amazing morning</h1>
             <p className="textPreview">We are giving you are one time opportunity to experience a better life with coffee.</p>
             <Button>Order Now</Button>
           </div>
           <div className="wrapperRight"></div>
-        </div>
+        </motion.div>
       </SectionMorning>
-      <Feedback>
+      <Feedback initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <h2>Our coffee perfection feedback</h2>
         <p>Our customers has amazing things to say about us</p>
         <div className="slider">

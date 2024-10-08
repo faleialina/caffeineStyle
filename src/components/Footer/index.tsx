@@ -36,9 +36,7 @@ const BackgroundCoffeBeans = styled.div`
       gap: 20px;
 
       h1 {
-        font-family: Clicker Script;
-        font-size: 54px;
-        font-weight: 400;
+        font: 400 54px 'Clicker Script';
         color: #ffffff;
 
         @media (max-width: 900px) {
@@ -47,9 +45,7 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       p {
-        font-family: Playfair Display;
-        font-size: 14px;
-        font-weight: 400;
+        font: 400 14px 'Playfair Display';
         color: #ffffff;
         line-height: 22px;
 
@@ -62,22 +58,54 @@ const BackgroundCoffeBeans = styled.div`
       .images {
         display: flex;
         gap: 20px;
-        /* .facebook{
+        img {
+          transition: background-color 0.3s ease;
 
-				}
-				{
-					
-					-webkit-mask: $path no-repeat 50% 50%;
-					mask: $path no-repeat 50% 50%;
-					mask-size: cover;
-					-webkit-mask-size: cover;
-					background-color: $color;
-				}
+          &.facebook {
+            background-color: #ffffff;
+            mask: url(${facebook}) no-repeat center;
+            mask-size: cover;
+            -webkit-mask: url(${facebook}) no-repeat center;
+            -webkit-mask-size: cover;
 
-				&:hover {
-					background-color: $hover-color;
-					cursor: pointer;
-				} */
+            &:hover {
+              background-color: #b0c5f9;
+              cursor: pointer;
+            }
+          }
+
+          &.instagram {
+            -webkit-mask: url(${instagram}) no-repeat center;
+            mask: url(${instagram}) no-repeat center;
+            background-color: #ffffff;
+
+            &:hover {
+              background-color: #ffcbfd;
+              cursor: pointer;
+            }
+          }
+
+          &.youtube {
+            -webkit-mask: url(${youtube}) no-repeat center;
+            mask: url(${youtube}) no-repeat center;
+            background-color: #ffffff;
+            &:hover {
+              background-color: #ffb2b2;
+              cursor: pointer;
+            }
+          }
+
+          &.twitter {
+            -webkit-mask: url(${twitter}) no-repeat center;
+            mask: url(${twitter}) no-repeat center;
+            background-color: #ffffff;
+
+            &:hover {
+              background-color: #c6eaff;
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
 
@@ -91,9 +119,7 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       h2 {
-        font-family: Playfair Display;
-        font-size: 26px;
-        font-weight: 700;
+        font: 700 26px 'Playfair Display';
         color: #ffffff;
         margin: 0 0 55px;
 
@@ -103,9 +129,7 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       p {
-        font-family: Playfair Display;
-        font-size: 18px;
-        font-weight: 400;
+        font: 400 18px 'Playfair Display';
         color: #ffffff;
 
         @media (max-width: 900px) {
@@ -150,7 +174,7 @@ const Footer = () => {
               <img className="facebook" src={facebook} alt="facebook" />
               <img className="instagram" src={instagram} alt="instagram" />
               <img className="youtube" src={youtube} alt="youtube" />
-              <img className="youtube" src={twitter} alt="youtube" />
+              <img className="twitter" src={twitter} alt="twitter" />
             </div>
           </div>
           <div className="info_menu">
