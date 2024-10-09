@@ -58,52 +58,71 @@ const BackgroundCoffeBeans = styled.div`
       .images {
         display: flex;
         gap: 20px;
-        img {
-          transition: background-color 0.3s ease;
 
-          &.facebook {
-            background-color: #ffffff;
-            mask: url(${facebook}) no-repeat center;
-            mask-size: cover;
-            -webkit-mask: url(${facebook}) no-repeat center;
-            -webkit-mask-size: cover;
+        .facebook,
+        .instagram,
+        .youtube,
+        .twitter {
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+          background-repeat: no-repeat;
 
-            &:hover {
-              background-color: #b0c5f9;
-              cursor: pointer;
-            }
+          &:hover {
+            transform: scale(1.1);
           }
+        }
 
-          &.instagram {
-            -webkit-mask: url(${instagram}) no-repeat center;
-            mask: url(${instagram}) no-repeat center;
-            background-color: #ffffff;
+        .facebook {
+          background-image: url(${facebook});
+          mask: url(${facebook}) no-repeat center;
+          mask-size: cover;
+          -webkit-mask: url(${facebook}) no-repeat center;
+          -webkit-mask-size: cover;
 
-            &:hover {
-              background-color: #ffcbfd;
-              cursor: pointer;
-            }
+          &:hover {
+            background-color: #b0c5f9;
+            cursor: pointer;
           }
+        }
 
-          &.youtube {
-            -webkit-mask: url(${youtube}) no-repeat center;
-            mask: url(${youtube}) no-repeat center;
-            background-color: #ffffff;
-            &:hover {
-              background-color: #ffb2b2;
-              cursor: pointer;
-            }
+        .instagram {
+          background-image: url(${instagram});
+          mask: url(${instagram}) no-repeat center;
+          mask-size: cover;
+          -webkit-mask: url(${instagram}) no-repeat center;
+          -webkit-mask-size: cover;
+
+          &:hover {
+            background-color: #b0c5f9;
+            cursor: pointer;
           }
+        }
 
-          &.twitter {
-            -webkit-mask: url(${twitter}) no-repeat center;
-            mask: url(${twitter}) no-repeat center;
-            background-color: #ffffff;
+        .youtube {
+          background-image: url(${youtube});
+          mask: url(${youtube}) no-repeat center;
+          mask-size: cover;
+          -webkit-mask: url(${youtube}) no-repeat center;
+          -webkit-mask-size: cover;
 
-            &:hover {
-              background-color: #c6eaff;
-              cursor: pointer;
-            }
+          &:hover {
+            background-color: #b0c5f9;
+            cursor: pointer;
+          }
+        }
+
+        .twitter {
+          background-image: url(${twitter});
+          mask: url(${twitter}) no-repeat center;
+          mask-size: cover;
+          -webkit-mask: url(${twitter}) no-repeat center;
+          -webkit-mask-size: cover;
+
+          &:hover {
+            background-color: #b0c5f9;
+            cursor: pointer;
           }
         }
       }
@@ -171,10 +190,10 @@ const Footer = () => {
               since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             <div className="images">
-              <img className="facebook" src={facebook} alt="facebook" />
-              <img className="instagram" src={instagram} alt="instagram" />
-              <img className="youtube" src={youtube} alt="youtube" />
-              <img className="twitter" src={twitter} alt="twitter" />
+              <div className="facebook"></div>
+              <div className="instagram"></div>
+              <div className="youtube"></div>
+              <div className="twitter"></div>
             </div>
           </div>
           <div className="info_menu">
