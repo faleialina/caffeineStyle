@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 interface WrapperProps {
-  isOpen: boolean;
+  open: boolean;
 }
 
 const Wrapper = styled.div<WrapperProps>`
@@ -99,9 +99,10 @@ const Wrapper = styled.div<WrapperProps>`
     }
 
     @media (max-width: 700px) {
-      display: ${props => (props.isOpen ? 'flex' : 'none')};
+      display: ${props => (props.open ? 'flex' : 'none')};
       flex-direction: column;
       position: absolute;
+      z-index: 10;
       top: 70px;
       background-color: #333;
       width: 100%;
@@ -113,14 +114,14 @@ const Wrapper = styled.div<WrapperProps>`
 
 const Header = () => {
   const nav = ['Home', 'Menu', 'About Us', 'Contact Us'];
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setOpen(!open);
   };
 
   return (
-    <Wrapper isOpen={isOpen}>
+    <Wrapper open={open}>
       <h1>Caffeine</h1>
       <div className="burger" onClick={toggleMenu}>
         <div />
@@ -128,7 +129,7 @@ const Header = () => {
         <div />
       </div>
       <div className="navigation">
-        <ul className={`menu ${isOpen ? 'active' : ''}`}>
+        <ul className={`menu ${open ? 'active' : ''}`}>
           {nav.map(el => (
             <li key={el}>
               <p>{el}</p>
