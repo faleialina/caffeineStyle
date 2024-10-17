@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import caffeBkg from '../../assets/caffeBkg.png';
+import bg_coffe_short from '../../assets/caffeBkg.png';
 import bg_coffe_beans from './assets/CoffeBeansBackground.png';
 import facebook from './assets/facebook.svg';
 import instagram from './assets/instagram.svg';
@@ -7,7 +7,7 @@ import twitter from './assets/twitter.svg';
 import youtube from './assets/youtube.svg';
 
 const BackgroundFooter = styled.div`
-  background-image: url(${caffeBkg});
+  background-image: url(${bg_coffe_short});
   width: 100%;
   height: 374px;
   background-size: cover;
@@ -36,7 +36,9 @@ const BackgroundCoffeBeans = styled.div`
       gap: 20px;
 
       h1 {
-        font: 400 54px 'Clicker Script';
+        font-family: Clicker Script;
+        font-size: 54px;
+        font-weight: 400;
         color: #ffffff;
 
         @media (max-width: 900px) {
@@ -45,7 +47,9 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       p {
-        font: 400 14px 'Playfair Display';
+        font-family: Playfair Display;
+        font-size: 14px;
+        font-weight: 400;
         color: #ffffff;
         line-height: 22px;
 
@@ -58,73 +62,6 @@ const BackgroundCoffeBeans = styled.div`
       .images {
         display: flex;
         gap: 20px;
-
-        .facebook,
-        .instagram,
-        .youtube,
-        .twitter {
-          cursor: pointer;
-          width: 24px;
-          height: 24px;
-          background-size: contain;
-          background-repeat: no-repeat;
-
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-
-        .facebook {
-          background-image: url(${facebook});
-          mask: url(${facebook}) no-repeat center;
-          mask-size: cover;
-          -webkit-mask: url(${facebook}) no-repeat center;
-          -webkit-mask-size: cover;
-
-          &:hover {
-            background-color: #b0c5f9;
-            cursor: pointer;
-          }
-        }
-
-        .instagram {
-          background-image: url(${instagram});
-          mask: url(${instagram}) no-repeat center;
-          mask-size: cover;
-          -webkit-mask: url(${instagram}) no-repeat center;
-          -webkit-mask-size: cover;
-
-          &:hover {
-            background-color: #b0c5f9;
-            cursor: pointer;
-          }
-        }
-
-        .youtube {
-          background-image: url(${youtube});
-          mask: url(${youtube}) no-repeat center;
-          mask-size: cover;
-          -webkit-mask: url(${youtube}) no-repeat center;
-          -webkit-mask-size: cover;
-
-          &:hover {
-            background-color: #b0c5f9;
-            cursor: pointer;
-          }
-        }
-
-        .twitter {
-          background-image: url(${twitter});
-          mask: url(${twitter}) no-repeat center;
-          mask-size: cover;
-          -webkit-mask: url(${twitter}) no-repeat center;
-          -webkit-mask-size: cover;
-
-          &:hover {
-            background-color: #b0c5f9;
-            cursor: pointer;
-          }
-        }
       }
     }
 
@@ -138,7 +75,9 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       h2 {
-        font: 700 26px 'Playfair Display';
+        font-family: Playfair Display;
+        font-size: 26px;
+        font-weight: 700;
         color: #ffffff;
         margin: 0 0 55px;
 
@@ -148,7 +87,9 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       p {
-        font: 400 18px 'Playfair Display';
+        font-family: Playfair Display;
+        font-size: 18px;
+        font-weight: 400;
         color: #ffffff;
 
         @media (max-width: 900px) {
@@ -190,10 +131,10 @@ const Footer = () => {
               since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             <div className="images">
-              <div className="facebook"></div>
-              <div className="instagram"></div>
-              <div className="youtube"></div>
-              <div className="twitter"></div>
+              <img className="facebook" src={facebook} alt="facebook" />
+              <img className="instagram" src={instagram} alt="instagram" />
+              <img className="youtube" src={youtube} alt="youtube" />
+              <img className="youtube" src={twitter} alt="youtube" />
             </div>
           </div>
           <div className="info_menu">
@@ -214,8 +155,8 @@ const Footer = () => {
               {[
                 'Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016',
                 '+1 202-918-2132',
-                'beanscene@mail.com',
-                'www.beanscene.com',
+                'mailto:beanscene@mail.com',
+                'https://www.beanscene.com',
               ].map((el, i) => (
                 <p key={i}>{el}</p>
               ))}
